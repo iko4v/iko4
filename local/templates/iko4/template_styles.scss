@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import "sass";
+@import "js/hamburgers/hamburgers.scss";
 
 // ZERO POINTS
 // WATCHER TURN ON !!! (Tools -> File Watchers -> SCSS)
@@ -238,6 +239,12 @@ header.header {
   height: 100px;
   margin-bottom: 40px;
 
+  .hamburger {
+    display: none;
+    position: relative;
+    z-index: 2;
+  }
+
   .header__top {
 	height: 100%;
     display: flex;
@@ -271,26 +278,61 @@ header.header {
     .header__search_field {
       width: 100%;
     }
+
+    .mobile_container {
+      position: relative;
+
+      .mobile_menu__container {
+        position: absolute;
+        top: 6px;
+        left: -300%;
+        width: 320px;
+        height: 500px;
+        z-index: 1;
+        transition: all .4s ease-out;
+        -webkit-transition: all .4s ease-out;
+        -moz-transition: all .4s ease-out;
+        -o-transition: all .4s ease-out;
+        -ms-transition: all .4s ease-out;
+      }
+
+      .open {
+        left: 0;
+
+        .mobile_menu {
+          .aside {
+            display: flex;
+
+            .aside__menu {
+              width: 100%;
+              min-width: 340px;
+              min-height: 720px;
+              padding: 55px 10px 38px 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.aside {
+  flex: 0 0 auto;
+  width: 286px;
+
+  .aside__menu {
+    background-color: $bgDark;
+    border-radius: 4px;
+    min-height: 390px;
+    padding: 20px 10px 38px 20px;
+    margin-right: 30px;
+    margin-bottom: 30px;
   }
 }
 
 main.main {
   .mainarea {
 	display: flex;
-  }
-
-  .aside {
-	flex: 0 0 auto;
-	width: 286px;
-
-    .aside__menu {
-      background-color: $bgDark;
-      border-radius: 4px;
-      min-height: 390px;
-      padding: 20px 10px 38px 20px;
-      margin-right: 30px;
-      margin-bottom: 30px;
-    }
   }
 
   .workarea {
@@ -326,11 +368,24 @@ footer.footer {
 
 // MEDIA
 @media (max-width: 750px) {
+
   header.header {
+    .hamburger {
+      display: block;
+    }
+
+    .header__search_field {
+      display: flex;
+
+      .search_form__container {
+        width: 100%;
+        padding-top: 6px;
+      }
+    }
 
     .header__top {
       flex-direction: column;
-      height: 70%;
+      //height: 70%;
 
       .header__logo {
         margin-right: 0;
@@ -338,12 +393,12 @@ footer.footer {
     }
   }
 
+  .aside {
+    display: none;
+  }
+
   main.main {
-
-    .aside {
-      display: none;
-    }
-
+    margin-top: 70px;
     .main_about {
       .about__title {
         h1 {
@@ -353,5 +408,6 @@ footer.footer {
     }
   }
 }
+
 
 

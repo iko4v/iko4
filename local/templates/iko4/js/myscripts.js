@@ -33,6 +33,12 @@ $(function () {
 		itemIcon.removeClass('closed');
 	});
 
+	var $hamburger = $(".hamburger");
+	$hamburger.on("click", function(e) {
+		$hamburger.toggleClass("is-active");
+		$('.mobile_menu__container').toggleClass('open');
+	});
+
 });
 
 

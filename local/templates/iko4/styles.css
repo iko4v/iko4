@@ -53,4 +53,11 @@
   .chbx_btn_cover .chbx_promocode:focus + label:before {
     box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.2), 0 0 0 3px rgba(255, 255, 0, 0.7); }
 
+@media (max-width: 750px) {
+  .bookmarks__list_header {
+    flex-direction: column;
+    align-items: center; }
+    .bookmarks__list_header .description__title {
+      margin-bottom: 20px; } }
+
 /*# sourceMappingURL=styles.css.map */

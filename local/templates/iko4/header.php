@@ -9,7 +9,7 @@
 
 	// CSS
 	Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/js/hightlight/styles/base16/material-darker.min.css');
-	Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/js/plugins/fancybox/source/jquery.fancybox.css');
+	Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/js/hamburgers/hamburgers.min.css');
 	// JS
 	Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery.min.js');
 	Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/hightlight/highlight.min.js');
@@ -27,7 +27,6 @@
 	Asset::getInstance()->addString("<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>");
 	Asset::getInstance()->addString("<link href=\"https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:ital,wght@0,400;0,700;1,300;1,400&display=swap\" rel=\"stylesheet\">");
 	?>
-
 	<title><? $APPLICATION->ShowTitle() ?></title>
 	<script type='application/ld+json'>
 		{
@@ -100,7 +99,38 @@
 					</svg>
 				</a>
 			</div>
-			<div class="header__search_field">
+			<div class="header__search_field mobile_container">
+				<button class="hamburger hamburger--spring" type="button">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</button>
+				<div class="mobile_menu__container">
+					<div class="mobile_menu">
+						<div class="aside">
+							<div class="aside__menu">
+								<? $APPLICATION->IncludeComponent(
+									"bitrix:menu",
+									"left",
+									array(
+										"ALLOW_MULTI_SELECT" => "N",
+										"CHILD_MENU_TYPE" => "section",
+										"DELAY" => "N",
+										"MAX_LEVEL" => "2",
+										"MENU_CACHE_GET_VARS" => array(),
+										"MENU_CACHE_TIME" => "3600",
+										"MENU_CACHE_TYPE" => "N",
+										"MENU_CACHE_USE_GROUPS" => "N",
+										"ROOT_MENU_TYPE" => "left",
+										"USE_EXT" => "Y",
+										"COMPONENT_TEMPLATE" => "left"
+									),
+									false
+								); ?>
+							</div>
+						</div>
+					</div>
+				</div>
 				<? $APPLICATION->IncludeComponent("bitrix:search.form", "search_form_header", Array(
 					"PAGE" => "#SITE_DIR#search/index.php",    // Страница выдачи результатов поиска (доступен макрос #SITE_DIR#)
 					"USE_SUGGEST" => "N",    // Показывать подсказку с поисковыми фразами
