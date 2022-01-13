@@ -247,4 +247,16 @@ footer.footer {
 #tr_DETAIL_TEXT_EDITOR {
   color: #000000; }
 
+@media (max-width: 750px) {
+  header.header .header__top {
+    flex-direction: column;
+    height: 70%; }
+    header.header .header__top .header__logo {
+      margin-right: 0; }
+
+  main.main .aside {
+    display: none; }
+  main.main .main_about .about__title h1 {
+    font-size: 32px; } }
+
 /*# sourceMappingURL=template_styles.css.map */

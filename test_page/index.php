@@ -12,8 +12,3 @@ $APPLICATION->SetTitle("Тестовый раздел");
 
 
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
-
-
-
-
-
