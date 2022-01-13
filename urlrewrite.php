@@ -24,6 +24,14 @@ $arUrlRewrite=array (
     'PATH' => '/personal/order/index.php',
     'SORT' => 100,
   ),
+  9 => 
+  array (
+    'CONDITION' => '#^/bookmarks/#',
+    'RULE' => '',
+    'ID' => 'bitrix:news',
+    'PATH' => '/bookmarks/index.php',
+    'SORT' => 100,
+  ),
   6 => 
   array (
     'CONDITION' => '#^/personal/#',
@@ -46,6 +54,14 @@ $arUrlRewrite=array (
     'RULE' => '',
     'ID' => 'bitrix:catalog.store',
     'PATH' => '/store/index.php',
+    'SORT' => 100,
+  ),
+  10 => 
+  array (
+    'CONDITION' => '#^/notes/#',
+    'RULE' => '',
+    'ID' => 'bitrix:news',
+    'PATH' => '/notes/index.php',
     'SORT' => 100,
   ),
   1 => 

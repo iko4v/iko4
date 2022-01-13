@@ -9,6 +9,6 @@ $APPLICATION->SetTitle("Тестовый раздел");
 	</code>
 </pre>
 
-
+<p>Скролл наверх с появляющейся кнопкой в зависимости от высоты прокрутки:</p>
 
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
